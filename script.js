@@ -32,7 +32,7 @@ function levelUp() {
     player.maxHp += 10;
     player.hp = player.maxHp;
     pHpBar = player.maxHp;
-    log.push(`Parabéns, ${player.name} subiu para o nível ${player.level}!\r\n${player.name}:\r\n- Ataque: ${player.attack}\r\n- Defesa: ${player.defense}\r\n- Vida:${player.maxHp}\r\n`);
+    log.push(`Parabéns, ${player.name} subiu para o nível ${player.level}!\r\n`);
 
   }
 
@@ -115,14 +115,14 @@ function action(p1, p2, auto) {
 
             p2.hp -= damage;
             if (p2.hp < 0) {p2.hp = 0}
-            log.push(`${p1.name} causou ${damage} de dano em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`);
+            log.push(`${p1.name} causou ${damage} de dano em ${p2.name}\r\n`);
 
         } else {
 
             //log.push(p1.name + " não causou dano em " + p2.name);
             p2.hp -= 1;
             if (p2.hp < 0) {p2.hp = 0}
-            log.push(`*${p1.name} causou dano mínimo*\r\n${p1.name} causou 1 de dano em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`)
+            log.push(`*${p1.name} causou dano mínimo*\r\n${p1.name} causou 1 de dano em ${p2.name}\r\n`)
 
         }
 
@@ -134,14 +134,14 @@ function action(p1, p2, auto) {
 
             p2.hp -= critical_damage;
             if (p2.hp < 0) {p2.hp = 0}
-            log.push(`${p1.name} causou ${critical_damage} de dano crítico em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`);
+            log.push(`${p1.name} causou ${critical_damage} de dano crítico em ${p2.name}\r\n`);
 
         } else {
 
             //log.push(p1.name + " não causou dano em " + p2.name);
             p2.hp -= 2
             if (p2.hp < 0) {p2.hp = 0}
-            log.push(`*${p1.name} causou dano crítico mínimo*\r\n${p1.name} causou 2 de dano em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`)
+            log.push(`*${p1.name} causou dano crítico mínimo*\r\n${p1.name} causou 2 de dano em ${p2.name}\r\n`)
 
         }
 
@@ -158,7 +158,7 @@ function action(p1, p2, auto) {
         p1.hp = p1.maxHp;
       }
 
-      log.push(`${p1.name} se curou em ${curar} pontos de vida.\r\n${p1.name}: [hp: ${p1.hp}/${p1.maxHp}]\r\n`);
+      log.push(`${p1.name} se curou em ${curar} pontos de vida.\r\n`);
 
     break;
 
@@ -227,7 +227,8 @@ function battle() {
       } else {
 
         const gold = Math.floor((Math.random() * enemy.xp) + enemy.xp/2);
-        log.push(`${enemy.name} foi derrotado!\r\n${player.name} ganhou ${enemy.xp} de xp.\r\n${player.name} ganhou ${gold} de Gold.\r\n`);
+        log.push(`${enemy.name} foi derrotado!\r\n`);
+        log.push(`${player.name} ganhou ${enemy.xp} de xp.\r\n${player.name} ganhou ${gold} de Gold.\r\n`);
         player.gold += gold;
         player.xp += enemy.xp;
         turn = 0;
@@ -308,7 +309,7 @@ var eHpBar = enemy.maxHp
 
 function info() {
 
-  if (log.length > 3) {log.shift()}
+  if (log.length > 5) {log.shift()}
 
   document.getElementById("player.name").innerHTML = `${player.name}`;
   document.getElementById("player.level").innerHTML = `Nível: ${player.level}`;
