@@ -282,6 +282,7 @@ function div(name) {
       <input type="button" onclick="search()" value="Procurar inimigo">
       <input type="button" onclick="start()" value="Iniciar combate">
       <input type="button" onclick="heal()" value="Descansar">
+      <input type="button" onclick="" value="Opções">
       `
     break;
 

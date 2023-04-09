@@ -13,54 +13,62 @@
 
 <body>
 		
-	<div class="characters flex">
+	<div class="game border">
+		
+		<div class="characters flex space-evenly">
 			
-		<div class="player">
-			<fieldset class="border colorA">
-				<legend class="border padding colorB" id="player.name+level">Player</legend>
-				<label>Hp:</label>
-				<progress id="player.hp" value="" max=""></progress>
-				<label id="player.maxHp">0/0</label>
-			</fieldset>			
+			<div class="player">
+				<fieldset class="border colorA">
+					<legend class="border padding colorB" id="player.name+level">Player</legend>
+					<label>Hp:</label>
+					<progress id="player.hp" value="" max=""></progress>
+					<label id="player.maxHp">0/0</label>
+				</fieldset>			
+			</div>
+
+			<div class="enemy">
+				<fieldset class="border colorA">
+					<legend class="border padding colorB" id="enemy.name">Enemy</legend>
+					<label>Hp:</label>
+					<progress id="enemy.hp" value="" max=""></progress>
+					<label id="enemy.maxHp">0/0</label>
+				</fieldset>
+			</div>
+
 		</div>
 
-		<div class="enemy">
+		<br>
+
+		<div class="sheet flex">
 			<fieldset class="border colorA">
-				<legend class="border padding colorB" id="enemy.name">Enemy</legend>
-				<label>Hp:</label>
-				<progress id="enemy.hp" value="" max=""></progress>
-				<label id="enemy.maxHp">0/0</label>
+				<legend class="border padding colorB" id="player.name">Ficha</legend>
+				<label id="player.level">Nível</label> <br>
+				<label>-</label> <br>
+				<label id="player.attack">Ataque</label> <br>
+				<label>-</label> <br>
+				<label id="player.defense">Defesa</label> <br>
+				<label>-</label> <br>
+				<label id="player.gold">Gold</label> <br>
+				<label>-</label> <br>
+				<label id="player.xp">xp</label> <br>
 			</fieldset>
 		</div>
 
+		<br>
+
+		<div class="footer flex center">
+			
+			<div>
+				<textarea class="border colorA" id="log" readonly="true" style="resize: none; width: 450px; height: 200px"></textarea>
+			</div>
+
+			<br>
+
+			<div class="flex" id="button" style="flex-wrap: wrap; width: 260px"></div>
+
+		</div>
+
 	</div>
-
-	<br>
-
-	<div>
-		<textarea class="border colorA" id="log" readonly="true" style="resize: none; width: 450px; height: 200px"></textarea>
-	</div>
-
-	<br>
-
-	<div class="sheet flex">
-		<fieldset class="border colorA">
-			<legend class="border padding colorB" id="player.name">Ficha</legend>
-			<label id="player.level">Nível</label> <br>
-			<label>-</label> <br>
-			<label id="player.attack">Ataque</label> <br>
-			<label>-</label> <br>
-			<label id="player.defense">Defesa</label> <br>
-			<label>-</label> <br>
-			<label id="player.gold">Gold</label> <br>
-			<label>-</label> <br>
-			<label id="player.xp">xp</label> <br>
-		</fieldset>
-	</div>
-
-	<br>
-
-	<div id="button"></div>
 
 	<script src="script.js"></script>
 

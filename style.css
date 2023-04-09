@@ -15,6 +15,10 @@
 
 .flex {display: flex}
 
+.space-evenly {justify-content: space-evenly}
+
+.center {justify-content: center}
+
 .align {text-align: center}
 
 .padding {padding: 5px 10px}
@@ -60,3 +64,11 @@ progress {color: var(--d);
 }
 
 .bold {font-weight: bold}
+
+.game {background: #6aadc2}
+
+.characters {background: #ff000080}
+
+.sheet {background: #ff000080}
+
+.footer {background: #ff000080}
