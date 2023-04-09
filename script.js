@@ -32,13 +32,7 @@ function levelUp() {
     player.maxHp += 10;
     player.hp = player.maxHp;
     pHpBar = player.maxHp;
-    console.log(`Parabéns, ${player.name} subiu para o nível ${player.level}!`);
-    console.log(`
-      ${player.name}:
-      - Ataque: ${player.attack}
-      - Defesa: ${player.defense}
-      - Vida:   ${player.maxHp}
-      `);
+    log.push(`Parabéns, ${player.name} subiu para o nível ${player.level}!\r\n${player.name}:\r\n- Ataque: ${player.attack}\r\n- Defesa: ${player.defense}\r\n- Vida:${player.maxHp}\r\n`);
 
   }
 
@@ -49,8 +43,7 @@ function heal() {
   if (inCombat == false) {
 
     player.hp = player.maxHp;
-    console.log(`${player.name} descansou e recuperou seu hp.`);
-    console.log(`${player.name}: [hp: ${player.hp}/${player.maxHp}]`);
+    log.push(`${player.name} descansou e recuperou seu hp.\r\n${player.name}: [hp: ${player.hp}/${player.maxHp}]\r\n`);
 
   }
 
@@ -80,11 +73,11 @@ function search() {
       enemy.hp = enemy.maxHp;
       eHpBar = enemy.hp;
       enemy.level = Math.floor(Math.random() * player.level) + 1;
-      console.log(`Você encontrou um ${enemy.name}!`);
+      log.push(`Você encontrou um ${enemy.name}!\r\n`);
 
     } else {
 
-      console.log(`Jogador está morto.`);
+      log.push(`Jogador está morto.\r\n`);
 
     }
 
@@ -112,7 +105,7 @@ function action(p1, p2, auto) {
 
       if (chance < 10) {
 
-        console.log(`${p1.name} falhou!`);
+        log.push(`${p1.name} falhou!\r\n`);
 
       } else if (chance < 90) {
 
@@ -122,17 +115,14 @@ function action(p1, p2, auto) {
 
             p2.hp -= damage;
             if (p2.hp < 0) {p2.hp = 0}
-            console.log(`${p1.name} causou ${damage} de dano em ${p2.name}`);
-            console.log(`${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]`)
+            log.push(`${p1.name} causou ${damage} de dano em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`);
 
         } else {
 
-            //console.log(p1.name + " não causou dano em " + p2.name);
+            //log.push(p1.name + " não causou dano em " + p2.name);
             p2.hp -= 1;
             if (p2.hp < 0) {p2.hp = 0}
-            console.log(`*${p1.name} causou dano mínimo*`)
-            console.log(`${p1.name} causou 1 de dano em ${p2.name}`);
-            console.log(`${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]`)
+            log.push(`*${p1.name} causou dano mínimo*\r\n${p1.name} causou 1 de dano em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`)
 
         }
 
@@ -144,17 +134,14 @@ function action(p1, p2, auto) {
 
             p2.hp -= critical_damage;
             if (p2.hp < 0) {p2.hp = 0}
-            console.log(`${p1.name} causou ${critical_damage} de dano crítico em ${p2.name}`);
-            console.log(`${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]`)
+            log.push(`${p1.name} causou ${critical_damage} de dano crítico em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`);
 
         } else {
 
-            //console.log(p1.name + " não causou dano em " + p2.name);
+            //log.push(p1.name + " não causou dano em " + p2.name);
             p2.hp -= 2
             if (p2.hp < 0) {p2.hp = 0}
-            console.log(`*${p1.name} causou dano crítico mínimo*`)
-            console.log(`${p1.name} causou 2 de dano em ${p2.name}`)
-            console.log(`${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]`)
+            log.push(`*${p1.name} causou dano crítico mínimo*\r\n${p1.name} causou 2 de dano em ${p2.name}\r\n${p2.name}: [hp: ${p2.hp}/${p2.maxHp}]\r\n`)
 
         }
 
@@ -171,14 +158,13 @@ function action(p1, p2, auto) {
         p1.hp = p1.maxHp;
       }
 
-      console.log(`${p1.name} se curou em ${curar} pontos de vida.`);
-      console.log(`${p1.name}: [hp: ${p1.hp}/${p1.maxHp}]`);
+      log.push(`${p1.name} se curou em ${curar} pontos de vida.\r\n${p1.name}: [hp: ${p1.hp}/${p1.maxHp}]\r\n`);
 
     break;
 
     case 2: // Fugir //
 
-    console.log(`${player.name} fugiu!`);
+    log.push(`${player.name} fugiu!\r\n`);
     turn = 0;
     inCombat = false;
     div("menu")
@@ -209,7 +195,7 @@ function battle() {
     // Vez do jogador ////////////////////////////////////////////////
     case 0:
 
-      console.log(``);
+      //log.push(`\r\n`);
 
       if (player.hp > 0) {
 
@@ -219,7 +205,7 @@ function battle() {
 
       } else {
 
-        console.log(`${player.name} foi derrotado!`);
+        log.push(`${player.name} foi derrotado!\r\n`);
         turn = 0;
         inCombat = false;
         div("menu");
@@ -231,7 +217,7 @@ function battle() {
     // Vez do inimigo ///////////////////////////////////////////////
     case 1:
 
-      console.log(``);
+      //log.push(``);
 
       if (enemy.hp > 0) {
 
@@ -241,9 +227,7 @@ function battle() {
       } else {
 
         const gold = Math.floor((Math.random() * enemy.xp) + enemy.xp/2);
-        console.log(`${enemy.name} foi derrotado!`);
-        console.log(`${player.name} ganhou ${enemy.xp} de xp.`);
-        console.log(`${player.name} ganhou ${gold} de Gold.`);
+        log.push(`${enemy.name} foi derrotado!\r\n${player.name} ganhou ${enemy.xp} de xp.\r\n${player.name} ganhou ${gold} de Gold.\r\n`);
         player.gold += gold;
         player.xp += enemy.xp;
         turn = 0;
@@ -268,19 +252,19 @@ function start() {
 
       if (enemy.hp > 0) {
 
-        console.log(`- ${player.name} entrou em combate com um ${enemy.name} -`);
+        log.push(`- ${player.name} entrou em combate com um ${enemy.name} -\r\n`);
         var battle_loop = setTimeout(battle, 0);
         inCombat = true;
 
       } else {
 
-        console.log(`Inimigo não foi encontrado.`);
+        log.push(`Inimigo não foi encontrado.\r\n`);
 
       }
 
     } else {
 
-      console.log(`${player.name} está morto.`);
+      log.push(`${player.name} está morto.\r\n`);
 
     }
 
@@ -317,12 +301,14 @@ function div(name) {
 
 }
 
-log = ["olá", "mundo"]
+log = []
 
 var pHpBar = player.maxHp
 var eHpBar = enemy.maxHp
 
 function info() {
+
+  if (log.length > 3) {log.shift()}
 
   document.getElementById("player.name").innerHTML = `${player.name}`;
   document.getElementById("player.level").innerHTML = `Nível: ${player.level}`;
@@ -331,7 +317,7 @@ function info() {
   document.getElementById("player.gold").innerHTML = `Gold: ${player.gold}`;
   document.getElementById("player.xp").innerHTML = `xp: ${player.xp}/${(player.level * 10) * player.level}`;
 
-  document.getElementById("log").innerHTML = `${log.map}`;
+  document.getElementById("log").innerHTML = `${log.join("\r\n")}`;
 
   document.getElementById("player.name+level").innerHTML = `${player.name} Lv.${player.level}`;
   document.getElementById("player.hp").value = pHpBar;
