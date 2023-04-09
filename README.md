@@ -1,3 +1,3 @@
-https://samarpedro.github.io/rpg/
+# https://samarpedro.github.io/rpg/
 # rpg
 meu joguinho de rpg em javascript
