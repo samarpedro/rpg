@@ -43,7 +43,7 @@ progress {color: var(--d);
   border-style: solid;
 }
 
-.button > input {
+#button > input {
   background: var(--a);;
   width: 130px;
   padding: 5px 0px;
@@ -54,7 +54,7 @@ progress {color: var(--d);
   border-style: solid;
 }
 
-.button > input:hover {
+#button > input:hover {
   background: var(--d);
   cursor: pointer;
 }

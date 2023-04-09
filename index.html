@@ -13,21 +13,41 @@
 
 <body>
 		
-	<div class="characters">
+	<div class="characters flex">
 			
-		<div class="player colorA border">
-				
+		<div class="player">
+			<fieldset class="border colorA">
+				<legend class="border padding colorB" id="player.name">Player</legend>
+				<label>Hp:</label>
+				<progress id="player.hp" value="" max=""></progress>
+				<label id="player.maxHp">0/0</label>
+			</fieldset>			
 		</div>
 
 		<div class="enemy">
-				
+			<fieldset class="border colorA">
+				<legend class="border padding colorB" id="enemy.name">Enemy</legend>
+				<label>Hp:</label>
+				<progress id="enemy.hp" value="" max=""></progress>
+				<label id="enemy.maxHp">0/0</label>
+			</fieldset>
 		</div>
 
 	</div>
 
-	<div class="sheet">
-			
+	<br>
+
+	<div class="sheet flex">
+		<fieldset class="border colorA">
+			<legend class="border padding colorB">Ficha</legend>
+			<label id="player.level">Nível</label>
+			<label id="player.attack">Ataque</label>
+			<label id="player.defense">Defesa</label>
+			<label id="player.gold">Gold</label>
+		</fieldset>
 	</div>
+
+	<br>
 
 	<div id="button"></div>
 
