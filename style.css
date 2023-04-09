@@ -1,0 +1,62 @@
+:root {
+  --a: #b1c2bb;
+  --b: #c7d1ce;
+  --c: #1d242f;
+  --d: #63b76c;
+  --e: #6aadc2;
+}
+
+* {
+  font-family: monospace;
+  font-style: oblique;
+  cursor: default;
+  user-select: none;
+}
+
+.flex {display: flex}
+
+.align {text-align: center}
+
+.padding {padding: 5px 10px}
+
+.border {
+  border-radius: 5px;
+  border-color: var(--c);
+  border-width: thin;
+  border-style: solid;
+}
+
+.colorA {background: var(--a)}
+.colorB {background: var(--b)}
+.colorC {background: var(--c)}
+.colorD {background: var(--d)}
+
+progress::-webkit-progress-bar {background-color: var(--b); border-radius: 3px;}
+
+progress::-webkit-progress-value {background-color: var(--d) !important; border-radius: 2px;}
+
+progress {color: var(--d);
+  height: 8px;
+  border-radius: 3px;
+  border-color: black;
+  border-width: thin;
+  border-style: solid;
+}
+
+.button > input {
+  background: var(--a);;
+  width: 130px;
+  padding: 5px 0px;
+
+  border-radius: 3px;
+  border-color: var(--c);
+  border-width: thin;
+  border-style: solid;
+}
+
+.button > input:hover {
+  background: var(--d);
+  cursor: pointer;
+}
+
+.bold {font-weight: bold}
