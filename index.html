@@ -17,7 +17,7 @@
 			
 		<div class="player">
 			<fieldset class="border colorA">
-				<legend class="border padding colorB" id="player.name">Player</legend>
+				<legend class="border padding colorB" id="player.name+level">Player</legend>
 				<label>Hp:</label>
 				<progress id="player.hp" value="" max=""></progress>
 				<label id="player.maxHp">0/0</label>
@@ -37,13 +37,24 @@
 
 	<br>
 
+	<div>
+		<textarea class="border colorA" id="log" style="width: 30%; height: 130px">a</textarea>
+	</div>
+
+	<br>
+
 	<div class="sheet flex">
 		<fieldset class="border colorA">
-			<legend class="border padding colorB">Ficha</legend>
-			<label id="player.level">Nível</label>
-			<label id="player.attack">Ataque</label>
-			<label id="player.defense">Defesa</label>
-			<label id="player.gold">Gold</label>
+			<legend class="border padding colorB" id="player.name">Ficha</legend>
+			<label id="player.level">Nível</label> <br>
+			<label>-</label> <br>
+			<label id="player.attack">Ataque</label> <br>
+			<label>-</label> <br>
+			<label id="player.defense">Defesa</label> <br>
+			<label>-</label> <br>
+			<label id="player.gold">Gold</label> <br>
+			<label>-</label> <br>
+			<label id="player.xp">xp</label> <br>
 		</fieldset>
 	</div>
 

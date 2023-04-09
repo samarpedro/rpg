@@ -317,17 +317,23 @@ function div(name) {
 
 }
 
+log = ["olá", "mundo"]
+
 var pHpBar = player.maxHp
 var eHpBar = enemy.maxHp
 
 function info() {
 
+  document.getElementById("player.name").innerHTML = `${player.name}`;
   document.getElementById("player.level").innerHTML = `Nível: ${player.level}`;
   document.getElementById("player.attack").innerHTML = `Ataque: ${player.attack}`;
   document.getElementById("player.defense").innerHTML = `Defesa: ${player.defense}`;
   document.getElementById("player.gold").innerHTML = `Gold: ${player.gold}`;
+  document.getElementById("player.xp").innerHTML = `xp: ${player.xp}/${(player.level * 10) * player.level}`;
 
-  document.getElementById("player.name").innerHTML = `${player.name} Lv.${player.level}`;
+  document.getElementById("log").innerHTML = `${log.map}`;
+
+  document.getElementById("player.name+level").innerHTML = `${player.name} Lv.${player.level}`;
   document.getElementById("player.hp").value = pHpBar;
   document.getElementById("player.hp").max = player.maxHp;
   document.getElementById("player.maxHp").innerHTML = `${pHpBar}/${player.maxHp}`;
