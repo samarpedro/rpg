@@ -1,2 +1,2 @@
 # https://samarpedro.github.io/rpg/
-meu joguinho de rpg em javascript
+turn-based combat rpg game made in javascript
